@@ -6,15 +6,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import DairyScreen from '../screens/DairyScreen';
 import FruitsScreen from '../screens/FruitsScreen';
 import VegetablesScreen from '../screens/VegetablesScreen';
+import BakeryScreen from '../screens/BakeryScreen';
 
 const Tab = createBottomTabNavigator();
+//safeareaview is removing screens UI - need to investivate 
 
 function TabNavigator() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <SafeAreaView stlye={styles.safeArea}>
-          </SafeAreaView>
+        <SafeAreaView stlye={styles.safeArea}></SafeAreaView>
           <Text style={styles.brandName}>FreshMart</Text>
           <Tab.Navigator>
             <Tab.Screen
@@ -31,9 +32,16 @@ function TabNavigator() {
                 headerShown:false
               }}
             />
-             <Tab.Screen
+            <Tab.Screen
               name="Dairy"
               component={DairyScreen}
+              options={{
+                headerShown:false
+              }}
+            />
+            <Tab.Screen
+              name="Bakery"
+              component={BakeryScreen}
               options={{
                 headerShown:false
               }}
