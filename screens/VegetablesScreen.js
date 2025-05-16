@@ -2,7 +2,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { Text, View, Image, TouchableOpacity, ScrollView,StyleSheet } from 'react-native';
-import { styles } from '../navigation/DrawerNavigator';
+import { styles } from '../navigation/TabNavigator';
 
 export default function VegetablesScreen() {
     const vegetables = [

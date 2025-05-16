@@ -2,7 +2,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { Text, View, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import { styles } from '../navigation/DrawerNavigator';
+import { styles } from '../navigation/TabNavigator';
 
 export default function DairyScreen() {
     const items = [
@@ -21,7 +21,7 @@ export default function DairyScreen() {
        <Text style={styles.title}>Fresh dairy products for you from cows</Text>
        {items.map((item, index) => (
         <View key={index} style={styles.itemContainer}>
-          <Image source={{uri: item.image}} stlye={styles.image} />
+          <Image source={{uri: item.image}} style={styles.image} />
           <View style={styles.details}>
             <Text style={styles.name}>{item.name}</Text>
             <Text style={styles.price}>{item.price}</Text>

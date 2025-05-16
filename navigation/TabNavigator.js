@@ -1,11 +1,46 @@
 import React from 'react'
-import { Text,StyleSheet} from 'react-native';
+import { Text,StyleSheet,SafeAreaView} from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import DairyScreen from '../screens/DairyScreen';
+import FruitsScreen from '../screens/FruitsScreen';
+import VegetablesScreen from '../screens/VegetablesScreen';
+
+const Tab = createBottomTabNavigator();
 
 function TabNavigator() {
   return (
     <SafeAreaProvider>
-      <Text>Tab Navigator</Text>
+      <NavigationContainer>
+        <SafeAreaView stlye={styles.safeArea}>
+          </SafeAreaView>
+          <Text style={styles.brandName}>FreshMart</Text>
+          <Tab.Navigator>
+            <Tab.Screen
+              name="Fruits"
+              component={FruitsScreen}
+              options={{
+                headerShown:false
+              }}
+            />
+            <Tab.Screen
+              name="Vegetables"
+              component={VegetablesScreen}
+              options={{
+                headerShown:false
+              }}
+            />
+             <Tab.Screen
+              name="Dairy"
+              component={DairyScreen}
+              options={{
+                headerShown:false
+              }}
+            />
+          </Tab.Navigator>
+        
+      </NavigationContainer>
     </SafeAreaProvider>
     
   )
