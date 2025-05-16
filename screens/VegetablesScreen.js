@@ -16,7 +16,19 @@ export default function VegetablesScreen() {
   
     return (
       <ScrollView style={styles.container}>
-        
+        <Text style={styles.title}>Fresh vegetables directly from farmers land</Text>
+        {vegetables.map((veggie, index) => (
+          <View key={index} style={styles.itemContainer}> 
+            <Image source={{uri: veggie.image}} style={styles.image}/>
+            <View style={styles.details}>
+              <Text style={styles.name}>{veggie.name}</Text>
+              <Text style={styles.price}>{veggie.price}</Text>
+              <TouchableOpacity style={styles.button} onPress={(()=> alert(`${veggie.name} added to cart`))}>
+                <Text style={styles.buttonText}>Add to Cart</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        ))}
       </ScrollView>
     );
   }
